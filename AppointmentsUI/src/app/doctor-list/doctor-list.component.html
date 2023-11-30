@@ -1,0 +1,53 @@
+<button (click)="goBack()">Back</button>
+&nbsp;
+&nbsp;
+<button (click)="viewAppointmentHistory()">Appointment History</button>
+&nbsp;
+&nbsp;
+
+
+<button (click)="updatepatient()">Update Details</button>
+
+&nbsp;
+&nbsp;
+<button (click)="logout()">Logout</button>
+<br>
+<br>
+
+
+<div class="report-container">
+	<div class="report-header">
+		<h1 class="recent-Articles">Doctors List</h1>
+		<button class="view">View All</button>
+	</div>
+
+	<div class="report-body">
+		<div class="report-topic-heading">
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Specializatiom</th>
+						<th scope="col">Email</th>
+						<th scope="col">Experience</th>
+						<th scope="col">Book Appointment</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let doctor of doctors">
+						<th scope="row">{{ doctor.name }}</th>
+						<td>{{ doctor.doctorSpecialization }}</td>
+						<td>{{ doctor.email }}</td>
+						<td>{{ doctor.experience }}</td>
+						<td><button (click)="bookAppointment(doctor.id)">
+								<h6>Book Appointment</h6>
+							</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
+</div>

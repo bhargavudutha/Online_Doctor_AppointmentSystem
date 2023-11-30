@@ -1,0 +1,48 @@
+<button (click)="goBack()">Back</button>
+&nbsp;
+&nbsp;
+&nbsp;
+<br>
+<br>
+
+
+<div class="report-container">
+	<div class="report-header">
+		<h1 class="recent-Articles">Appointments List</h1>
+	</div>
+
+	<div class="report-body">
+		<div class="report-topic-heading">
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Patient Name</th>
+						<th scope="col">Doctor Name</th>
+						<th scope="col">Specialization</th>
+						<th scope="col">Date</th>
+						<th scope="col">Time</th>
+						<th scope="col">Status</th>
+						&nbsp;&nbsp;&nbsp;
+						<th scope="col">Action</th>
+					
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let appointment of appointments">
+						<th scope="row">{{ appointment.patientName }}</th>
+						<td>{{ appointment.doctorName }}</td>
+						<td>{{ appointment.doctorSpecialization }}</td>
+						<td>{{ appointment.date }}</td>
+						<td>{{ appointment.time }}</td>
+						<td class="label-tag">{{ appointment.status }}</td>
+						&nbsp;&nbsp;&nbsp;
+						<td class="label-tag"><h6 (click)="deleteAppointment(appointment.id)">Delete</h6></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
+</div>

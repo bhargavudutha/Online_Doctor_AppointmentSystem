@@ -1,0 +1,63 @@
+<button class="view" (click)="goBack()">Back</button>
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	<div class="toast-header">
+		<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	</div>
+	<div class="toast-body">
+		{{message}}
+	</div>
+</div>
+<div class="formbold-main-wrapper">
+	<!-- Author: FormBold Team -->
+	<!-- Learn More: https://formbold.com -->
+	<div class="formbold-form-wrapper">
+		<form [formGroup]= "updateForm"  (ngSubmit)="updatePatient()" method="POST">
+			<div class="formbold-mb-5">
+				<label for="email" class="formbold-form-label">Email</label>
+				<input type="email" formControlName="email" name="email" id="email" formControlName="email"
+					[(ngModel)]="patient.email" class="form-control" />
+			</div>
+			
+				<div class="w-full sm:w-half formbold-px-3">
+					<div class="formbold-mb-5 w-full">
+						<label for="phoneNumber" class="formbold-form-label"> PhoneNumber </label>
+						<input type="text" name="phoneNumber" id="phoneNumber"
+							formControlName="phoneNumberString" [(ngModel)]="patient.phoneNumber"
+							class="form-control" />
+					</div>
+				</div>
+				<div class="flex flex-wrap formbold--mx-3">
+					<div class="w-full sm:w-half formbold-px-3">
+						<div class="formbold-mb-5 w-full">
+							<label for="name" class="formbold-form-label"> Name </label>
+							<input type="text" name="name" id="name" formControlName="name"
+							[(ngModel)]="patient.name"	 class="form-control"/>
+						</div>
+					</div>
+					<div class="w-full sm:w-half formbold-px-3">
+						<div class="formbold-mb-5">
+							<label for="age" class="formbold-form-label"> Age </label>
+							<input type="text" name="age" formControlName="age" id="age"
+							[(ngModel)]="patient.age"	class="form-control" />
+						</div>
+					</div>
+				</div>
+				<div class="formbold-mb-5">
+					<label for="bloodgroup" class="formbold-form-label">Blood group </label>
+					<input type="text" name="bloodgroup" id="bloodgroup" formControlName="bloodgroup"
+					[(ngModel)]="patient.bloodgroup"	 placeholder="Enter Blood group" class="form-control" />
+				</div>
+				<div class="formbold-mb-5">
+					<label for="address" class="formbold-form-label">Address </label>
+					<input type="text" name="address" id="address" formControlName="address"
+					[(ngModel)]="patient.address"	placeholder="Enter Address" class="form-control" />
+				</div>
+				<div class="formbold-main-wrapper">
+					<div>
+						<button class="formbold-btn">Update</button>
+					</div>
+				</div>
+			
+		</form>
+	</div>
+</div>

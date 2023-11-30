@@ -1,0 +1,40 @@
+<button (click)="goBack()">Back</button>
+&nbsp;
+&nbsp;
+&nbsp;
+<button (click)="logout()">Logout</button>
+<br>
+<br>
+
+
+<div class="report-container">
+	<div class="report-header">
+		<h1 class="recent-Articles">Doctors List</h1>
+	</div>
+
+	<div class="report-body">
+		<div class="report-topic-heading">
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Patient Name</th>
+						<th scope="col">Date</th>
+						<th scope="col">Time</th>
+						<th scope="col">Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let appointment of appointments">
+						<th scope="row">{{ appointment.patientName }}</th>
+						<td>{{ appointment.date }}</td>
+						<td>{{ appointment.time }}</td>
+						<td class = "label-tag">{{ appointment.status }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
+</div>

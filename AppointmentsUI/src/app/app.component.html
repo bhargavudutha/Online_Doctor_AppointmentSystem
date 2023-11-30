@@ -1,0 +1,84 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
+	<!-- Container wrapper -->
+	<div class="container-fluid">
+		<!-- Navbar brand -->
+		<img class="logo" src="../assets/logo1.png">
+
+		<!-- Toggle button -->
+		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+			data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<i class="fas fa-bars text-light"></i>
+		</button>
+
+		'&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		'
+		<!-- Collapsible wrapper -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<!-- Left links -->
+			<ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+				<li class="nav-item text-center mx-2 mx-lg-1">
+					<a class="nav-link active" aria-current="page" href="/">
+						<b>Home</b>
+					</a>
+				</li>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<li class="nav-item text-center mx-2 mx-lg-1">
+					<a (click)="onSelectMode('admin')" *ngIf="selectedMode !== 'admin'" class="nav-link active"
+						routerLink="/adminlogin">
+						<b>Admin Mode</b>
+					</a>
+				</li>
+			</ul>
+			<!-- Dropdown menu -->
+			<!-- Left links -->
+			<!-- Right links -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+				<li class="nav-item text-center mx-2 mx-lg-1">
+					<a (click)="onSelectMode('customer')" *ngIf="selectedMode !== 'customer'" class="nav-link active"
+						routerLink="/patientlogin">
+
+						<b>Customer Mode</b>
+					</a>
+				</li>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<li class="nav-item text-center mx-2 mx-lg-1">
+					<a (click)="onSelectMode('doctor')" *ngIf="selectedMode !== 'doctor'" class="nav-link active"
+						routerLink="/doctorlogin">
+						<b>Doctor Login</b>
+					</a>
+				</li>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<li class="nav-item text-center mx-2 mx-lg-1">
+					<a class="nav-link active" href="/news">
+						<b>News</b>
+					</a>
+				</li>
+			</ul>
+			<!-- Right links -->
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+			<p *ngIf="getUserName()" style="color: black;">{{userName}}</p>
+		</div>
+
+		<!-- Collapsible wrapper -->
+	</div>
+	<br>
+	<br>
+	<br>
+	<img class="logo1" src="../assets/logo1.png">
+	<!-- Container wrapper -->
+</nav>
+
+<br>
+
+<br>
+<router-outlet></router-outlet>

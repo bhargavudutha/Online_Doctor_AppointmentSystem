@@ -1,0 +1,39 @@
+<div class="form_wrapper">
+	<div class="form_container">
+		<div class="title_container">
+			<h2>Doctor Login Form</h2>
+		</div>
+		<div class="row clearfix">
+			<div class="">
+				<form (ngSubmit)="checkLogin()" class="form">
+						<div class="alert alert-warning" *ngIf='invalidLogin'>{{message}}</div>
+					 <div class="alert alert-success" *ngIf='isLoggedIn'>{{message}}</div>
+					<div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+						<input type="email" class="form-control" placeholder="Enter email" name="email"
+							[(ngModel)]="doctor.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+							#email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+						<div *ngIf="email.errors && (email.invalid && email.touched)">
+							<small class="text-danger" *ngIf="email.errors && email.errors['required']">Email Id is
+								required field</small>
+							<small class="text-danger" *ngIf="email.errors && email.errors['pattern']">Invalid Email Format</small>
+						</div>
+					</div>
+					<div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+						<input type="password" class="form-control" placeholder="Enter password" name="password"
+							[(ngModel)]="doctor.password" required #password="ngModel"
+							[class.is-invalid]="password.invalid && password.touched">
+						<small class="text-danger" [class.d-none]="password.valid || password.untouched">password is
+							required field</small>
+					</div>
+					<!--<div class="input_field checkbox_option">
+						<input type="checkbox" id="cb2">
+						<label for="cb2">I want to receive the newsletter</label>
+					</div>-->
+					<br>
+
+					<input class="button" type="submit" value="Login" />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

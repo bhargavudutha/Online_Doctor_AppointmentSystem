@@ -1,0 +1,42 @@
+<button (click)="goBack()">Back</button>
+&nbsp;
+&nbsp;
+&nbsp;
+<br>
+<br>
+
+
+<div class="report-container">
+	<div class="report-header">
+		<h1 class="recent-Articles">Doctors List</h1>
+	</div>
+
+	<div class="report-body">
+		<div class="report-topic-heading">
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Doctor Name</th>
+						<th scope="col">Specialization</th>
+						<th scope="col">Email</th>
+						<th scope="col">Experience</th>
+						<th scope="col">Phone Number</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let doctor of doctors">
+						<th scope="row">{{ doctor.name }}</th>
+						<td>{{ doctor.doctorSpecialization }}</td>
+						<td>{{ doctor.email }}</td>
+						<td>{{ doctor.experience }}</td>
+						<td>{{ doctor.phoneNumber }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
+</div>

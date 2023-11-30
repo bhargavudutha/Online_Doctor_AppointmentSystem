@@ -1,0 +1,70 @@
+<button class="view" (click)="goBack()">Back</button>
+<br>
+<div class="formbold-main-wrapper">
+	<!-- Author: FormBold Team -->
+	<!-- Learn More: https://formbold.com -->
+	<div class="formbold-form-wrapper">
+		<form action="https://formbold.com/s/FORM_ID" method="POST">
+			<p> {{message}}</p>
+			<div class="formbold-mb-5">
+				<label for="email" class="formbold-form-label">Email</label>
+				<input type="email" name="email" id="email" [(ngModel)]="appointment.email" #email="ngModel"
+					placeholder="Enter Email" class="formbold-form-input" />
+			</div>
+			<div class="flex flex-wrap formbold--mx-3">
+				<div class="w-full sm:w-half formbold-px-3">
+					<div class="formbold-mb-5 w-full">
+						<label class="formbold-form-label">Gender</label>
+						  <input type="radio" id="gender" name="gender" [(ngModel)]="appointment.gender" value="Male">
+						  <label for="gender">Male</label>
+						  <input type="radio" id="gender" name="gender" [(ngModel)]="appointment.gender" value="Female">
+						  <label for="gender">Female</label> &nbsp;
+						  <input type="radio" id="gender" name="gender" [(ngModel)]="appointment.gender" value="Other">
+						  <label for="gender">Other</label>
+					</div>
+				</div>
+
+			</div>
+			<div class="flex flex-wrap formbold--mx-3">
+				<div class="w-full sm:w-half formbold-px-3">
+					<div class="formbold-mb-5">
+						<label for="time" class="formbold-form-label"> Start Time </label>
+						<input type="time" name="startTime" [(ngModel)]="appointment.startTime" #time="ngModel"
+							id="startTime" class="formbold-form-input" />
+					</div>
+
+				</div>
+				<div class="w-full sm:w-half formbold-px-3">
+					<div class="formbold-mb-5  w-full">
+						<label for="date" class="formbold-form-label"> Date </label>
+						<input type="date" name="date" id="date" [(ngModel)]="appointment.date" #date="ngModel"
+							[min]="minDate"class="formbold-form-input" />
+					</div>
+				</div>
+			</div>
+
+
+			<div class="formbold-mb-5">
+				<label for="text" class="formbold-form-label"> Additional Information </label>
+				<input type="text" name="additionalInfo" [(ngModel)]="appointment.additionalInfo"
+					#additionalInfo="ngModel" id="startTime" class="formbold-form-input" />
+			</div>
+			<div class="formbold-mb-5">
+				<label for="symptoms" class="formbold-form-label"> Symptoms </label>
+				<input type="text" name="symptoms" id="Symptoms" [(ngModel)]="appointment.symptoms" #symptoms="ngModel"
+					placeholder="Enter symptoms" class="formbold-form-input" />
+			</div>
+
+
+			<div class="formbold-mb-5">
+				<label for="relation" class="formbold-form-label"> Relation </label>
+				<input type="text" name="relation" id="relation" [(ngModel)]="appointment.relation" #relation="ngModel"
+					placeholder="Relation e.g: self, mother etc" class="formbold-form-input" />
+			</div>
+
+			<div>
+				<button class="formbold-btn" (click)="bookAppointment()">Book Appointment</button>
+			</div>
+		</form>
+	</div>
+</div>
